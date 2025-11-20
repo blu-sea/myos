@@ -43,7 +43,7 @@ COPY customisations/bin /var/nordvpn/
 COPY customisations/txt/nordvpn.repo /var/nordvpn/ 
 RUN dnf install -y /var/nordvpn/nordvpn-3.18.5-1.x86_64.rpm
 #RUN groupadd nordvpn
-RUN usermod -aG nordvpn $USER me
+#RUN usermod -aG nordvpn $USER me
 
 ### LINTING
 ## Verify final image and contents are correct.

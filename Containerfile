@@ -37,7 +37,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     /ctx/build.sh
 
 # Copy customisations
-COPY customisations/bin/ /var/tmp/ # Copy the workaround nordvpn rpm to a mutable location for auto install in the build file
+COPY customisations/bin/ /etc/yum.repos.d/ # Copy the workaround nordvpn rpm to a mutable location for auto install in the build file
 COPY customisations/txt/nordvpn.repo /etc/yum.repos.d/ # add the nordvpn repo just in case it can be used later once a fix for v4.x incompatibility with atomic is released
 
 

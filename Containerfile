@@ -2,6 +2,11 @@
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /
+# Customisations
+# Copy the workaround nordvpn rpm to a mutable location for auto install in the build file
+COPY customisations/bin / 
+COPY customisations/txt/nordvpn.repo / 
+
 
 # Base Image
 #FROM ghcr.io/ublue-os/bazzite:stable
@@ -35,11 +40,6 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
     /ctx/build.sh
-
-# Copy customisations
-COPY customisations/bin /var # Copy the workaround nordvpn rpm to a mutable location for auto install in the build file
-COPY customisations/txt/nordvpn.repo /var # add the nordvpn repo just in case it can be used later once a fix for v4.x incompatibility with atomic is released
-
 
 ### LINTING
 ## Verify final image and contents are correct.

@@ -21,7 +21,7 @@ dnf5 install -y tmux
 #
 # Nordvpn
 # Install the workaround rpm for nordvpn
-# dnf5 install -y /var/tmp/nordvpn-3.18.5-1.x86_64.rpm # I commented this line out because the 'file doesn't exist' - to be debugged
+dnf5 install -y /var/nordvpn/nordvpn-3.18.5-1.x86_64.rpm # I commented this line out because the 'file doesn't exist' - to be debugged. Created the desiting folder first using RUN command, see Containerfile
 
 #### Example for enabling a System Unit File
 

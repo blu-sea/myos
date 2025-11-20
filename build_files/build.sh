@@ -16,6 +16,11 @@ dnf5 install -y tmux
 #
 # dnf5 -y copr enable ublue-os/staging
 # dnf5 -y install package
+
+# Onedriver
+dnf5 -y copr enable jstaf/onedriver
+dnf5 -y install onedriver
+
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 #

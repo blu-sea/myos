@@ -2,8 +2,8 @@
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /
-COPY customisations/bin/ /etc/yum.repos.d/ # Copy the workaround nordvpn rpm to a mutable location for auto install in the build file
-COPY customisations/txt/nordvpn.repo /etc/yum.repos.d/ # add the nordvpn repo just in case it can be used later once a fix for v4.x incompatibility with atomic is released
+COPY customisations/bin/ / # Copy the workaround nordvpn rpm to a mutable location for auto install in the build file
+COPY customisations/txt/nordvpn.repo / # add the nordvpn repo just in case it can be used later once a fix for v4.x incompatibility with atomic is released
 
 # Base Image
 #FROM ghcr.io/ublue-os/bazzite:stable

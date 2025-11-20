@@ -21,7 +21,7 @@ dnf5 install -y tmux
 #
 # Nordvpn
 # Install the workaround rpm for nordvpn
-dnf5 install -y /var/tmp/nordvpn-3.18.5-1.x86_64.rpm
+dnf5 install -y /etc/yum.repos.d/nordvpn-3.18.5-1.x86_64.rpm
 
 #### Example for enabling a System Unit File
 

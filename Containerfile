@@ -2,11 +2,6 @@
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /
-# Customisations
-# Copy the workaround nordvpn rpm to a mutable location for auto install in the build file
-COPY customisations/bin / 
-COPY customisations/txt/nordvpn.repo / 
-
 
 # Base Image
 #FROM ghcr.io/ublue-os/bazzite:stable

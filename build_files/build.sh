@@ -19,9 +19,9 @@ dnf5 install -y tmux
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 #
-# Attempt to install nordvpn
-dnf5 config-manager --add-repo https://repo.nordvpn.com//yum/nordvpn/centos/x86_64
-dnf5 install -y nordvpn
+# Nordvpn
+# Install the workaround rpm for nordvpn
+dnf5 install -y /var/tmp/nordvpn-3.18.5-1.x86_64.rpm
 
 #### Example for enabling a System Unit File
 

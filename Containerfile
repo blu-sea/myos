@@ -46,6 +46,7 @@ RUN mkdir /var/nordvpn
 # Copy the workaround nordvpn rpm to a mutable location for auto install in the build file
 COPY customisations/bin /var/nordvpn/
 COPY customisations/txt/nordvpn.repo /var/nordvpn/ 
+RUN dnf install -y /var/nordvpn/nordvpn-3.18.5-1.x86_64.rpm
 
 ### LINTING
 ## Verify final image and contents are correct.

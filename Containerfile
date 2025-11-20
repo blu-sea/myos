@@ -41,6 +41,12 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=tmpfs,dst=/tmp \
     /ctx/build.sh
 
+# Experimenting...
+RUN mkdir /var/nordvpn
+# Copy the workaround nordvpn rpm to a mutable location for auto install in the build file
+COPY customisations/bin /var/nordvpn/
+COPY customisations/txt/nordvpn.repo /var/nordvpn/ 
+
 ### LINTING
 ## Verify final image and contents are correct.
 RUN bootc container lint

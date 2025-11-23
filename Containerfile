@@ -5,7 +5,7 @@ COPY build_files /
 COPY customisations/bin / # add further customisations
 
 # Base Image
-FROM ghcr.io/ublue-os/aurora-dx:stable # KDE but more vanilla container around 11Gb compared to Bazzite KDE around 17Gb!
+FROM ghcr.io/ublue-os/aurora-dx:stable # KDE but more vanilla dev container around 11Gb compared to Bazzite dx KDE around 17Gb!
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest

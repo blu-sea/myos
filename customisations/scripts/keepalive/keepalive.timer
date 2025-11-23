@@ -1,0 +1,9 @@
+[Unit]
+Description=Run my keepalive script every 10 minutes
+
+[Timer]
+OnCalendar=*:0/4
+Persistent=true
+
+[Install]
+WantedBy=timers.target

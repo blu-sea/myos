@@ -1,0 +1,8 @@
+[Unit]
+Description=Run my keepalive bash script to play an almost inaudible mp3 periodically to keep my Q90R soundbar from entering power save mode
+
+[Install]
+WantedBy=default.target
+
+[Service]
+ExecStart=/var/home/me/configs/scripts/keepalive/keepalive.sh

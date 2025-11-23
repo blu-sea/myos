@@ -6,11 +6,12 @@ COPY customisations/bin /
 
 # Base Image
 # KDE dx but more vanilla dev container around 11Gb compared to Bazzite dx KDE around 17Gb, GH limits current 10Gb so drop dx and use dev mode once OS running?
-FROM ghcr.io/ublue-os/aurora:stable 
+FROM ghcr.io/ublue-os/bazzite-dx:stable
+#FROM ghcr.io/ublue-os/aurora:stable 
 #FROM ghcr.io/ublue-os/aurora-dx:stable
 
 ## Other possible base images include:
-# FROM ghcr.io/ublue-os/bazzite:latest
+#FROM ghcr.io/ublue-os/bazzite:latest
 #FROM ghcr.io/ublue-os/bluefin-dx:gts
 #FROM ghcr.io/ublue-os/bazzite:stable
 #FROM ghcr.io/ublue-os/bazzite:stable

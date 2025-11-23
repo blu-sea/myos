@@ -20,8 +20,9 @@ dnf5 install -y /ctx/nordvpn-4.2.3-1.x86_64.rpm
 # dnf5 -y install package
 
 # Onedriver
-dnf5 -y copr enable jstaf/onedriver
-dnf5 -y install onedriver
+# Currently broken due dependecies, so disabled
+#dnf5 -y copr enable jstaf/onedriver
+#dnf5 -y install onedriver
 
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging

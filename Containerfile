@@ -1,14 +1,17 @@
-# Customised by blu-sea
+# ublue template customised - blu-sea
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /
+COPY customisations/bin / # add further customisations
 
 # Base Image
-#FROM ghcr.io/ublue-os/bazzite:stable
+FROM ghcr.io/ublue-os/aurora-dx:stable # KDE but more vanilla container around 11Gb compared to Bazzite KDE around 17Gb!
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
-FROM ghcr.io/ublue-os/bluefin-dx:gts
+#FROM ghcr.io/ublue-os/bluefin-dx:gts
+#FROM ghcr.io/ublue-os/bazzite:stable
+#FROM ghcr.io/ublue-os/bazzite:stable
 # 
 # ... and so on, here are more base images
 # Universal Blue Images: https://github.com/orgs/ublue-os/packages
@@ -35,15 +38,6 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
     /ctx/build.sh
-
-# Experimenting...
-RUN mkdir /var/nordvpn
-# Copy the workaround nordvpn rpm to a mutable location for auto install in the build file
-COPY customisations/bin /var/nordvpn/
-COPY customisations/txt/nordvpn.repo /var/nordvpn/ 
-RUN dnf install -y /var/nordvpn/nordvpn-3.18.5-1.x86_64.rpm
-#RUN groupadd nordvpn
-#RUN usermod -aG nordvpn $USER me
 
 ### LINTING
 ## Verify final image and contents are correct.

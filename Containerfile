@@ -2,7 +2,7 @@
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /
-COPY customisations/bin / # add further customisations
+COPY customisations/bin /
 
 # Base Image
 FROM ghcr.io/ublue-os/aurora-dx:stable # KDE but more vanilla dev container around 11Gb compared to Bazzite dx KDE around 17Gb!

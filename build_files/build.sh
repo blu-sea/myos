@@ -11,6 +11,8 @@ set -ouex pipefail
 
 # this installs a package from fedora repos
 dnf5 install -y tmux mc
+# this is a quick hack local rpm install, TODO - make the repo work instead so this rpm updates automatically
+dnf5 install -y /ctx/nordvpn-4.2.3-1.x86_64.rpm
 
 # Use a COPR Example:
 #
@@ -24,10 +26,8 @@ dnf5 -y install onedriver
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 #
-# Nordvpn
-# Install the workaround rpm for nordvpn
-#dnf5 install -y /var/nordvpn/nordvpn-3.18.5-1.x86_64.rpm # I commented this line out because the 'file doesn't exist' - to be debugged. Created the desiting folder first using RUN command, see Containerfile
 
-#### Example for enabling a System Unit File
+#### Enable Systemd Unit Files
 
 systemctl enable podman.socket
+systemctl enable nordvpnd

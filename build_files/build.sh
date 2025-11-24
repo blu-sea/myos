@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux mc konsole
+dnf5 install -y tmux mc konsole mlocate
 
 # VPN this is a quick hack local rpm install, TODO - make the repo work instead so this rpm updates automatically
 dnf5 install -y /ctx/nordvpn-4.2.3-1.x86_64.rpm

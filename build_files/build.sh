@@ -38,7 +38,7 @@ baseurl=https://pkgs.netbird.io/yum/
 enabled=1
 gpgcheck=0
 gpgkey=https://pkgs.netbird.io/yum/repodata/repomd.xml.key
-repo_gpgcheck=1
+repo_gpgcheck=0
 EOF
 
 #dnf5 -y config-manager addrepo --from-repofile=/etc/yum.repos.d/netbird.repo

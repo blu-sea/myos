@@ -8,10 +8,10 @@ COPY customisations/bin /
 # KDE dx but more vanilla dev container around 11Gb compared to Bazzite dx KDE around 17Gb
 #FROM ghcr.io/ublue-os/aurora-dx:latest
 #FROM ghcr.io/ublue-os/aurora-dx:stable
-#FROM ghcr.io/ublue-os/aurora:stable
+FROM ghcr.io/ublue-os/aurora:stable
 #FROM ghcr.io/ublue-os/bazzite-dx:stable
 #FROM ghcr.io/ublue-os/bazzite:latest
-FROM ghcr.io/ublue-os/bluefin-dx:gts
+#FROM ghcr.io/ublue-os/bluefin-dx:gts
 #FROM ghcr.io/ublue-os/bazzite:stable
 #FROM ghcr.io/ublue-os/bazzite:stable
 # 

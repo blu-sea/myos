@@ -15,6 +15,9 @@ dnf5 install -y tmux mc konsole plocate
 # VPN this is a quick hack local rpm install, TODO - make the repo work instead so this rpm updates automatically
 dnf5 install -y /ctx/nordvpn-4.2.3-1.x86_64.rpm
 
+# Teamviewer
+#dnf5 install -y /ctx/teamviewerXXXX.rpm
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging

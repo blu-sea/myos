@@ -7,7 +7,8 @@ COPY customisations/bin /
 # Base Image
 #
 # Current image source
-FROM ghcr.io/ublue-os/bluefin-dx:gts
+#FROM ghcr.io/ublue-os/bluefin-dx:gts
+FROM ghcr.io/ublue-os/bluefin-dx:stable
 #
 # KDE dx but more vanilla dev container around 11Gb compared to Bazzite dx KDE around 17Gb
 #FROM ghcr.io/ublue-os/aurora-dx:latest

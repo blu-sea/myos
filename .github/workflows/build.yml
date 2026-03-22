@@ -5,7 +5,8 @@ on:
     branches:
       - main
   schedule:
-    - cron: '05 10 * * *'  # 10:05am UTC everyday
+    #- cron: '05 10 * * *'  # 10:05am UTC everyday
+    - cron: '0 5 * * 3' # Build at 5am each Wed (Tue is Fedora Updates day so one day later)
   push:
     branches:
       - main

@@ -1,1 +1,1 @@
-myOS - test repo for bootc containers
+myOS - test repo for bootc bootable workstation containers

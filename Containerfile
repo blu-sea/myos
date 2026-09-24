@@ -1,5 +1,5 @@
 # ublue template customised - blu-sea
-# edit date 20072026
+# edit date 20261124 (20260720)
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /

@@ -4,18 +4,7 @@ set -ouex pipefail
 
 ### Install packages
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
-
 ################# myOS ####################
-# this installs a package from fedora repos
-dnf5 install -y tmux mc konsole plocate 
-
-# VPN this is a quick hack local rpm install, TODO - make the repo work instead so this rpm updates automatically
-dnf5 install -y /ctx/nordvpn-4.2.3-1.x86_64.rpm
-
 # Epson drivers
 # Epson driver: put its /opt payload in the image, not /var/opt
 if [ -L /opt ]; then
@@ -23,7 +12,18 @@ if [ -L /opt ]; then
 fi 
 mkdir -p /opt
 dnf5 install -y /ctx/epson-inkjet-printer-escpr2-1.2.44-1.x86_64.rpm
+
+# this installs a package from fedora repos
+dnf5 install -y tmux mc konsole plocate 
+
+# VPN this is a quick hack local rpm install, TODO - make the repo work instead so this rpm updates automatically
+dnf5 install -y /ctx/nordvpn-4.2.3-1.x86_64.rpm
 #############################################
+
+# Packages can be installed from any enabled yum repo on the image.
+# RPMfusion repos are available by default in ublue main images
+# List of rpmfusion packages can be found here:
+# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # Teamviewer
 #dnf5 install -y /ctx/teamviewerXXXX.rpm

@@ -7,13 +7,19 @@ set -ouex pipefail
 ################# myOS ####################
 # Epson drivers
 # Epson driver: put its /opt payload in the image, not /var/opt
-# Currently this is rough hack, blows away /opt to make it work
-# If opt symlink needed to /var/opt for other apps etc, reverse this
+# If symlinked then delete symlink and create hard /opt
 if [ -L /opt ]; then
   rm /opt
 fi 
 mkdir -p /opt
+# Install the driver
 dnf5 install -y /ctx/epson-inkjet-printer-escpr2-1.2.44-1.x86_64.rpm
+# Copy the /opt installation to /var/opt
+cp -a /opt/. /var/opt/
+# Remove the hard /opt directory
+rm -rf /opt
+# Symlink it back
+ln -s /var/opt /opt   
 
 # this installs a package from fedora repos
 dnf5 install -y tmux mc konsole plocate 

@@ -7,6 +7,8 @@ set -ouex pipefail
 ################# myOS ####################
 # Epson drivers
 # Epson driver: put its /opt payload in the image, not /var/opt
+# Currently this is rough hack, blows away /opt to make it work
+# If opt symlink needed to /var/opt for other apps etc, reverse this
 if [ -L /opt ]; then
   rm /opt
 fi 

@@ -17,6 +17,11 @@ dnf5 install -y tmux mc konsole plocate
 dnf5 install -y /ctx/nordvpn-4.2.3-1.x86_64.rpm
 
 # Epson drivers
+# Epson driver: put its /opt payload in the image, not /var/opt
+if [ -L /opt ]; then
+  rm /opt
+fi 
+mkdir -p /opt
 dnf5 install -y /ctx/epson-inkjet-printer-escpr2-1.2.44-1.x86_64.rpm
 #############################################
 

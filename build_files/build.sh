@@ -17,9 +17,9 @@ dnf5 install -y /ctx/epson-inkjet-printer-escpr2-1.2.44-1.x86_64.rpm
 # Copy the /opt installation to /var/opt
 cp -a /opt/. /var/opt/
 # Remove the hard /opt directory
-rm -rf /opt
+#rm -rf /opt
 # Symlink it back
-ln -s /var/opt /opt   
+#ln -s /var/opt /opt   
 
 # this installs a package from fedora repos
 dnf5 install -y tmux mc konsole plocate 

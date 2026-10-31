@@ -7,6 +7,7 @@ set -ouex pipefail
 ################# myOS ####################
 # Nix Store, at least create the /nix folder, whether it gets used much or not
 mkdir -p /nix
+#################
 # Epson drivers
 # Stage the driver which will install to /opt in /usr since it's final destination in /var/opt is persistent with previous user files on all but the first deployment, then deploy to /var/opt on first boot after update
 
@@ -17,9 +18,13 @@ fi
 mkdir -p /opt
 dnf5 install -y /ctx/epson-inkjet-printer-escpr2-1.2.44-1.x86_64.rpm
 
-# 2. Copy payload to an immutable staging path (survives in /usr, updated every upgrade)
+# 2. Copy Epson driver and deploy script to an immutable staging path (survives in /usr, updated every upgrade)
 mkdir -p /usr/lib/epson-escpr2
 cp -a /opt/epson-inkjet-printer-escpr2/. /usr/lib/epson-escpr2/
+cp -a /ctx/scripts/deploy-epson.sh /usr/lib/epson-escpr2/
+chmod +x /usr/lib/epson-escpr2/deploy-epson.sh
+cp -a /ctx/systemd/epson-escpr2-deploy.service /etc/systemd/system/
+ln -sf /etc/systemd/system/epson-escpr2-deploy.service /etc/systemd/system/multi-user.target.wants/epson-escpr2-deploy.service
 
 # 3. Remove real /opt, restore the symlink
 rm -rf /opt

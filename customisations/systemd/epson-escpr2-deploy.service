@@ -1,0 +1,11 @@
+[Unit]
+Description=Deploy Epson ESCPR2 driver to /var/opt
+After=local-fs.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/lib/epson-escpr2/deploy.sh
+
+[Install]
+WantedBy=multi-user.target

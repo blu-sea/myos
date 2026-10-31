@@ -3,7 +3,7 @@
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /
-COPY customisations/bin /
+COPY customisations /
 
 # Base Image
 #

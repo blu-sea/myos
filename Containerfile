@@ -8,7 +8,8 @@ COPY customisations/bin /
 # Base Image
 #
 # Current image source
-FROM ghcr.io/ublue-os/bluefin-dx:44 # The intention of specifying 44 (which is from stable branch anyway), rather than stable is that once Fedora moves to 45 i can have a break for a few months over xmas without having to be an early adoptor
+# The intention of specifying :44 below (which is from stable branch anyway), rather than :stable is that once Fedora moves to 45 i can have a break for a few months over xmas without having to be an early adoptor
+FROM ghcr.io/ublue-os/bluefin-dx:44 
 #FROM ghcr.io/ublue-os/bluefin-dx:gts
 #FROM ghcr.io/ublue-os/bluefin-dx:stable
 #

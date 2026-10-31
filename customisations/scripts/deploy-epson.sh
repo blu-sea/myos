@@ -1,7 +1,7 @@
-n#!/usr/bin/env bash
+#!/usr/bin/env bash
 
-# /usr/lib/epson-escpr2/deploy-epson.sh
 # Blu-sea script to deploy the Epson driver from the staging area to /var/opt
+# /usr/lib/epson-escpr2/deploy-epson.sh
 
 set -euo pipefail
 

@@ -16,7 +16,7 @@ if [ -L /opt ]; then
   rm /opt
 fi
 mkdir -p /opt
-dnf5 install -y /ctx/epson-inkjet-printer-escpr2-1.2.44-1.x86_64.rpm
+dnf5 install -y /ctx/bin/epson-inkjet-printer-escpr2-1.2.44-1.x86_64.rpm
 
 # 2. Copy Epson driver and deploy script to an immutable staging path (survives in /usr, updated every upgrade)
 mkdir -p /usr/lib/epson-escpr2
@@ -36,7 +36,7 @@ ln -s /var/opt /opt
 #fi 
 #mkdir -p /opt
 # Install the driver
-#dnf5 install -y /ctx/epson-inkjet-printer-escpr2-1.2.44-1.x86_64.rpm
+#dnf5 install -y /ctx/bin/epson-inkjet-printer-escpr2-1.2.44-1.x86_64.rpm
 # Copy the /opt installation to /var/opt
 #cp -a /opt/. /var/opt/
 # Remove the hard /opt directory
@@ -48,7 +48,7 @@ ln -s /var/opt /opt
 dnf5 install -y tmux mc konsole plocate 
 
 # VPN this is a quick hack local rpm install, TODO - make the repo work instead so this rpm updates automatically
-dnf5 install -y /ctx/nordvpn-4.2.3-1.x86_64.rpm
+dnf5 install -y /ctx/bin/nordvpn-4.2.3-1.x86_64.rpm
 #############################################
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -57,7 +57,7 @@ dnf5 install -y /ctx/nordvpn-4.2.3-1.x86_64.rpm
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # Teamviewer
-#dnf5 install -y /ctx/teamviewerXXXX.rpm
+#dnf5 install -y /ctx/bin/teamviewerXXXX.rpm
 
 # Use a COPR Example:
 #

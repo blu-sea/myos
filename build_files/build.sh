@@ -5,6 +5,8 @@ set -ouex pipefail
 ### Install packages
 
 ################# myOS ####################
+# Nix Store, at least create the /nix folder, whether it gets used much or not
+mkdir -p /nix
 # Epson drivers
 # Epson driver: put its /opt payload in the image, not /var/opt
 # If symlinked then delete symlink and create hard /opt

@@ -42,10 +42,15 @@ dnf5 install -y tmux mc konsole plocate
 # VPN this is a quick hack local rpm install, TODO - make the repo work instead so this rpm updates automatically
 dnf5 install -y /ctx/bin/nordvpn-4.2.3-1.x86_64.rpm
 
-############## ICONS ########################
-# Install candy icons to /usr/share/icons
+############## CONFIGS ########################
+# Install my configs to /usr/lib/configs
+mkdir -p /usr/lib/configs
+cp -a /ctx/. /usr/lib/configs
+# Put icons in /usr/share/icons
+if [ ! -d /usr/share/icons ]; then
+  mkdir -p /usr/share/icons
+fi
 cp -a /ctx/icons/. /usr/share/icons/
-
 #############################################
 
 # Packages can be installed from any enabled yum repo on the image.

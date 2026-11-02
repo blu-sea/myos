@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Ghostty
+Comment=Ghostty 
+Exec=nix run --impure github:nix-community/nixGL#nixGLIntel -- ghostty
+#Icon=/nix/store/pda6j5833xwmiqh8w8bpsccs22hxqlk3-ghostty-1.4.0/share/icons/hicolor/32x32/apps/com.mitchellh.ghostty.png
+Icon=/usr/share/icons/candy-icons/apps/scalable/com.mitchellh.ghostty.svg
+Terminal=false
+Categories=Utility;   

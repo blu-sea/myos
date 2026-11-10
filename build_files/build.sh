@@ -39,9 +39,9 @@ ln -s /var/opt /opt
 dnf5 install -y tmux mc konsole plocate 
 
 ################ NEXTCLOUD ##################
-# Nextcloud desktop client, works better than flatpak
-dnf5 install -y nextcloud-client
-dnf5 install -y nextcloud-client-devel
+# Nextcloud desktop client: appimage has OpenVFS already, flatpak likely next, rpm last, so comment out the rpm
+#dnf5 install -y nextcloud-client
+#dnf5 install -y nextcloud-client-devel
 
 ############### VPN #########################
 # VPN this is a quick hack local rpm install, TODO - make the repo work instead so this rpm updates automatically

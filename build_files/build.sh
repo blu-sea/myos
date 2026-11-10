@@ -34,14 +34,14 @@ ln -sf /etc/systemd/system/epson-escpr2-deploy.service /etc/systemd/system/multi
 rm -rf /opt
 ln -s /var/opt /opt
 
-################ MISC RRPMs #################
+################ MISC RRPMs ################
 # this installs a package from fedora repos
 dnf5 install -y tmux mc konsole plocate 
 
-############################################
+################ NEXTCLOUD ##################
 # Nextcloud desktop client, works better than flatpak
-dnf5 install nextcloud-client
-dnf5 install nextcloud-client-devel
+dnf5 install -y nextcloud-client
+dnf5 install -y nextcloud-client-devel
 
 ############### VPN #########################
 # VPN this is a quick hack local rpm install, TODO - make the repo work instead so this rpm updates automatically

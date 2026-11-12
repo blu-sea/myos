@@ -45,7 +45,8 @@ dnf5 install -y tmux mc konsole plocate
 
 ############### VPN #########################
 # VPN this is a quick hack local rpm install, TODO - make the repo work instead so this rpm updates automatically
-dnf5 install -y /ctx/bin/nordvpn-4.2.3-1.x86_64.rpm
+#dnf5 install -y /ctx/bin/nordvpn-4.2.3-1.x86_64.rpm
+dnf5 install -y /ctx/bin/nordvpn-*.x86_64.rpm
 
 ############## CONFIGS ########################
 # Install my configs to /usr/lib/configs
